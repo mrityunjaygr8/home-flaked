@@ -108,9 +108,6 @@
       vimAlias = true;
       vimdiffAlias = true;
     };
-    nix-index = {
-      enable = true;
-    };
     tmux = {
       enable = true;
       clock24 = true;
