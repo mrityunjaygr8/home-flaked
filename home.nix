@@ -18,10 +18,12 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    fzf
+    less
     difftastic
     lazydocker
     git-credential-manager
-    ungoogled-chromium
+    chromium
     devenv
     fd
     ripgrep
@@ -32,7 +34,8 @@
     go
     python3
     nodePackages.pnpm
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono"]; })
+    nodePackages.npm
+    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
