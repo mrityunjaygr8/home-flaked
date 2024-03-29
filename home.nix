@@ -263,6 +263,12 @@
     };
   };
 
+  xdg.configFile.nvim = {
+    source = ./nvim;
+    recursive = true;
+  };
+
+
   dconf.settings =
     let
       custom_shortcuts =
