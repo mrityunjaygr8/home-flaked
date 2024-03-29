@@ -193,7 +193,7 @@
 
         fish_add_path $HOME/.local/bin
 
-        set -gx EDITOR hx
+        set -gx EDITOR nvim
         # The WAYLAND_DISPLAY env is not being set in terminals other than GNOME CONSOLE.
         # This was creating a problem when using helix, as it as not using wayland specific 
         # clipboard provider due to this.
