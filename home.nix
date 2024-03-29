@@ -146,6 +146,24 @@
         bind-key -T copy-mode-vi 'C-l' select-pane -R
         bind-key -T copy-mode-vi 'C-\' select-pane -l
         bind-key -T copy-mode-vi 'C-Space' select-pane -t:.+
+
+        fg="#CBCCC6"
+        bg="#212732"
+        status_bg="#34455A"
+        border_fg="#70748C"
+        border_active_fg="#FECB6E"
+        status_left_bg="#FFA759"
+
+        set -g status-style "bg=$status_bg,fg=$fg"
+        # set -g status-left-style "bg=$status_left_bg,fg=$fg"
+
+        # Border
+        set -g pane-border-style "bg=$bg,fg=$border_fg"
+        set -g pane-active-border-style "bg=$bg,fg=$border_active_fg"
+
+        # Window
+        set -g window-status-current-style "fg=$border_active_fg"
+        set -g window-status-style "fg=$fg"
       '';
 
     };
@@ -168,15 +186,6 @@
             repo = "pure";
             rev = "a959c8b97d5d444e1e1a04868967276acc127099";
             sha256 = "sha256-6T/4ThQ2KXrSnLBfCHF8PC3rg16D9cCUCvrS8RSvCno=";
-          };
-        }
-        {
-          name = "catppuccin";
-          src = pkgs.fetchFromGitHub {
-            owner = "catppuccin";
-            repo = "fish";
-            rev = "cb79527f5bd53f103719649d34eff3fbae634155";
-            sha256 = "sha256-ciUNJrZE1EJ6YeMmEIjX/vDiP2MCG1AYHpdjeQOOSxg=";
           };
         }
         {
@@ -216,7 +225,7 @@
         # http://fishshell.com/docs/current/index.html#variables-color
         set fish_color_autosuggestion brblack
 
-        fish_config theme choose Nord
+        fish_config theme choose "ayu Dark"
         set -Ux GIT_ASKPASS ""
         set VIRTUALFISH_PYTHON_EXEC $(which python)
 
@@ -276,7 +285,7 @@
     type = "Application";
     genericName = "Terminal";
     exec = "/home/mgr8/.local/bin/ghostty";
-    icon = "Alacritty";
+    icon = "Console";
     categories = [
       "System"
       "TerminalEmulator"
@@ -290,13 +299,16 @@
         font-family = JetBrainsMonoNL Nerd Font
         font-size = 15
         command = fish
+        theme = ayu
       '';
     };
   };
 
-  xdg.configFile.nvim = {
-    source = ./nvim;
-    recursive = true;
+  xdg.configFile = {
+    nvim = {
+      source = ./nvim;
+      recursive = true;
+    };
   };
 
 
