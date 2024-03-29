@@ -76,3 +76,5 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 
 vim.opt.colorcolumn = '80'
+
+vim.opt.laststatus = 3
